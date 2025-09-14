@@ -2,7 +2,7 @@ import pandas as pd
 import matplotlib.pyplot as plt
 import seaborn as sns
 
-data = pd.read_csv("rice_crop_analysis.csv", delimiter='\t')
+data = pd.read_csv("rice_yield_prediction.csv", delimiter='\t')
 
 sns.set(style="whitegrid")
 plt.figure(figsize=(12, 6))
@@ -22,13 +22,15 @@ plt.ylabel("Yield (kg/ha)", fontsize=12)
 plt.xlabel("Rice Variety", fontsize=12)
 plt.legend([], [], frameon=False)  
 plt.tight_layout()
-plt.show()
+# Yield comparison plot
+plt.savefig("images/yield_comparison.png")
+plt.close()
 
 import pandas as pd
 import matplotlib.pyplot as plt
 import seaborn as sns
 
-data = pd.read_csv("rice_crop_analysis.csv", delimiter='\t')
+data = pd.read_csv("rice_yield_predoction.csv", delimiter='\t')
 
 numeric_columns = data.select_dtypes(include=["float64", "int64"]).columns
 correlation_matrix = data[numeric_columns].corr()
@@ -37,16 +39,16 @@ plt.figure(figsize=(10, 6))
 sns.heatmap(correlation_matrix, annot=True, cmap="YlGnBu", fmt=".2f")
 plt.title("Correlation Heatmap", fontsize=14)
 plt.tight_layout()
-plt.show()
-
-
+# Correlation heatmap
+plt.savefig("images/correlation_heatmap.png")
+plt.close()
 
 import pandas as pd
 import matplotlib.pyplot as plt
 import seaborn as sns
 
 # Load the dataset
-file_path = "rice_crop_analysis.csv"  # Replace with your actual file path
+file_path = "rice_yield_predicton.csv"  # Replace with your actual file path
 data = pd.read_csv(file_path, delimiter="\t")  # Adjust the delimiter if necessary
 
 # Pie Chart: Proportion of Soil Types
@@ -61,7 +63,11 @@ plt.pie(
 )
 plt.title("Proportion of Soil Types", fontsize=12)  # Reduced font size
 plt.tight_layout()
-plt.show()
+plt.savefig("images/soil_type_distribution.png")
+plt.close()
+
+
+
 
 
 import pandas as pd
@@ -69,7 +75,7 @@ import matplotlib.pyplot as plt
 import seaborn as sns
 
 # Load the dataset
-data = pd.read_csv("rice_crop_analysis.csv", delimiter='\t')
+data = pd.read_csv("rice_yield_prediction.csv", delimiter='\t')
 
 # Pie Chart: Protein Deficiency Severity Distribution
 severity_counts = data["Protein Deficiency Severity"].value_counts()
@@ -78,8 +84,9 @@ plt.figure(figsize=(6,6))
 plt.pie(severity_counts, labels=severity_counts.index, autopct="%1.1f%%", startangle=140, colors=sns.color_palette("Set2"))
 plt.title("Protein Deficiency Severity Distribution", fontsize=14)
 plt.tight_layout()
-plt.show()
-
+# Yield comparison plot
+plt.savefig("images/Protein_Deficiency_Severity_Distribution.png")
+plt.close()
 
 
 import pandas as pd
@@ -87,7 +94,7 @@ import matplotlib.pyplot as plt
 import seaborn as sns
 
 # Load the dataset
-data = pd.read_csv("rice_crop_analysis.csv", delimiter='\t')
+data = pd.read_csv("rice_yield_prediction.csv", delimiter='\t')
 
 # Bar Chart: Yield by Region
 plt.figure(figsize=(10, 6))
@@ -106,7 +113,8 @@ plt.xlabel("Region", fontsize=12)
 plt.ylabel("Yield (kg/ha)", fontsize=12)
 plt.xticks(rotation=45)
 plt.tight_layout()
-plt.show()
+plt.savefig("images/average_yield_region.png")
+plt.close()
 
 
 import pandas as pd
@@ -114,7 +122,7 @@ import matplotlib.pyplot as plt
 import seaborn as sns
 
 # Load the dataset
-data = pd.read_csv("rice_crop_analysis.csv", delimiter='\t')
+data = pd.read_csv("rice_yield_prediction.csv", delimiter='\t')
 
 # Scatter Plot: Rainfall vs Yield
 plt.figure(figsize=(10, 6))
@@ -124,6 +132,9 @@ plt.xlabel("Rainfall (mm/month)", fontsize=12)
 plt.ylabel("Yield (kg/ha)", fontsize=12)
 plt.legend(title="Deficiency Severity")
 plt.tight_layout()
-plt.show()
+# Rainfall vs Yield plot
+plt.savefig("images/rainfall_vs_yield.png")
+plt.close()
+
 
 
