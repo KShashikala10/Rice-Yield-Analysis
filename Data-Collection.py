@@ -1,7 +1,7 @@
 #DATA COLLECTION
 import pandas as pd
 
-file_path = "rice_crop_analysis.csv" 
+file_path = "rice_yield_prediction.csv" 
 try:
     data = pd.read_csv(file_path, sep="\t")  
     print("Dataset loaded successfully!")
