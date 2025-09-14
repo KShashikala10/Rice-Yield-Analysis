@@ -3,7 +3,7 @@ from sklearn.ensemble import RandomForestRegressor, RandomForestClassifier
 from sklearn.model_selection import train_test_split
 from sklearn.metrics import mean_squared_error, r2_score, accuracy_score
 
-data = pd.read_csv("rice_crop_analysis.csv", delimiter="\t")
+data = pd.read_csv("rice_yield_prediction.csv", delimiter="\t")
 data.rename(columns={
     'Temperature (Â°C)': 'Temperature (°C)',
     'Rainfall (mm/month)': 'Rainfall (mm/month)',
